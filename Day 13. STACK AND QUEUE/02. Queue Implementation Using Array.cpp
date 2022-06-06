@@ -13,6 +13,11 @@ public:
         arr = new int[5001];
         count = 0;
     }
+    
+    ~Queue()
+	{
+		delete []Q;
+	}
 
     /*----------------- Public Functions of Queue -----------------*/
 
