@@ -1,6 +1,4 @@
-
-class LRUCache
-{
+class LRUCache {
 public:
     class Node{
         public: 
@@ -12,16 +10,14 @@ public:
             Node(int key, int val) : key(key), val(val),prev(NULL),next(NULL) {}
     };
     
-private:
-        int capacity;
-        Node *head;
-        Node *tail;
-        unordered_map<int, Node*>mp;
+private:    
+    int capacity;
+    Node *head;
+    Node *tail;
+    unordered_map<int, Node*>mp;
     
-public:
-    
-    LRUCache(int capacity_)
-    {
+public:    
+    LRUCache(int capacity_) {
         capacity = capacity_;
         head = new Node(-1,-1);
         tail = new Node(-1,-1);
@@ -45,7 +41,7 @@ public:
         delPrev->next = delNext;
         delNext->prev = delPrev;
     }
-
+    
     int get(int key_)
     {
         if(mp.find(key_) != mp.end())
@@ -61,7 +57,7 @@ public:
         return -1;
     }
 
-    void set(int key_, int value_)
+    void put(int key_, int value_)
     {
         if(mp.find(key_) != mp.end())
         {
@@ -70,12 +66,19 @@ public:
             deleteNode(existingNode);
         }
         if(mp.size() == capacity)
-        {
+            {
                 Node *delNode = tail->prev;
                 mp.erase(delNode->key);
                 deleteNode(delNode);                
-        }
+            }
         addNode(new Node(key_,value_));
         mp[key_] = head->next;
     }
 };
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache* obj = new LRUCache(capacity);
+ * int param_1 = obj->get(key);
+ * obj->put(key,value);
+ */
