@@ -1,4 +1,4 @@
-#BRUTE FORCE --> TC : O(N^2)  SC : O(1)
+//BRUTE FORCE --> TC : O(N^2)  SC : O(1)
 
 class Solution {
 public:
