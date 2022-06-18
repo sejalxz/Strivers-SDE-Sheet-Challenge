@@ -1,4 +1,36 @@
-// BETTER APPROACH  --> TC : O(5N) = O(N)  SC : O(3N) = O(N)
+// OPTIMAL SOLUTION  --> TC : O(N)+O(N) SC: O(N)
+
+class Solution {
+public:
+    //TC -> O(N) + O(N) 
+    //SC -> O(N)
+    int largestRectangleArea(vector<int>& heights) {
+        int maxArea = 0;
+        int n = heights.size();
+        stack<int>st; 
+        
+        for(int i = 0 ; i <= n ; i++)
+        {
+            while(!st.empty() && (i==n || heights[st.top()] >= heights[i]))
+            {
+                int currentHeight = heights[st.top()];
+                st.pop();
+                int rs = i;
+                int width;
+                if(st.empty())
+                    width = rs;
+                else
+                    width = (rs-st.top()-1);
+                    
+                maxArea = max(maxArea, width * currentHeight);
+            }
+            st.push(i);
+        }
+        return maxArea;
+    }
+};
+
+// BETTER APPROACH  --> TC : 3 * O(N) = O(N)  SC : O(3N) = O(N)
 
 class Solution {
 public:
