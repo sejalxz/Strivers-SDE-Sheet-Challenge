@@ -76,7 +76,7 @@ class Solution
 
 //OPTIMAL
 // TC : O(N)
-// SC : O(1)
+// SC : O(N)
 
 #include <stack>
 int findCelebrity(int n) {
