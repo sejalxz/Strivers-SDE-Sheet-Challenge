@@ -1,7 +1,7 @@
 // Recursive Preorder Traversal of N-ary Tree
 
 // TC : O(N)
-// SC : O(H)
+// SC : O(N)
 
 class Solution {
 public:
@@ -32,7 +32,7 @@ public:
 // Iterative Preorder Traversal of N-ary Tree
 
 // TC : O(N)
-// SC : O(H)
+// SC : O(N)
 
 class Solution {
 public:
