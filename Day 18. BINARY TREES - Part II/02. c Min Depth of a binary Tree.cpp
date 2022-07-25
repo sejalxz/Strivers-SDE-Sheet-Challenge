@@ -1,6 +1,6 @@
 // Recursive 
 // TC : O(N)
-// SC : O(N)
+// SC : O(1)
 
 class Solution {
 public:
