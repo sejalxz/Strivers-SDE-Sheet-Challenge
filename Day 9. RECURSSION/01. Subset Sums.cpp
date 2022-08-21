@@ -1,4 +1,31 @@
-//TC : O(2^N) + O(2^N * log(2^N) for sorting.
+class Solution
+{
+    //TC : O(2^N)
+    //SC : O(2^N)
+    
+public:
+    vector<int> subsetSums(vector<int> nums, int N)
+    {
+        vector<int>result;
+        generateSubsetSum(nums,0,0,result);
+        return result;
+    }
+    
+private:
+    void generateSubsetSum(vector<int> &nums, int currentIndex, int sum, vector<int>&result)
+    {
+        if(currentIndex >= nums.size()){
+            result.push_back(sum);
+            return;
+        }
+        generateSubsetSum(nums,currentIndex+1, sum + nums[currentIndex],result);
+        
+        generateSubsetSum(nums,currentIndex+1, sum,result);
+    }
+    
+};
+
+//TC : O(2^N * k ) + O(2^N * log(2^N) for sorting.
 //SC : O(2^N)
 
 #include <algorithm>
