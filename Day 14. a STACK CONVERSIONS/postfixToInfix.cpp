@@ -23,13 +23,13 @@ string postfixToInfix(string postfix)
 			st.push(opr);
 		}
 		else {
-			string op1 = st.top();
-			st.pop();
-
 			string op2 = st.top();
 			st.pop();
 
-			string exp = "(" + op2 + postfix[i] + op1 + ")";
+			string op1 = st.top();
+			st.pop();
+
+			string exp = "(" + op1 + postfix[i] + op2 + ")";
 			st.push(exp);
 		}
 	}
