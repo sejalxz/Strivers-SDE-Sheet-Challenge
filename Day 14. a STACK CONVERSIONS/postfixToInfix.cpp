@@ -47,7 +47,7 @@ int main() {
 	getline(cin, postfix);
 
 	string infix = postfixToInfix(postfix);
-	cout << "Postfix expression of " << postfix << " : " << infix;
+	cout << "Infix expression of " << postfix << " : " << infix;
 
 
 	return 0;
